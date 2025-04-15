@@ -1,129 +1,144 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAÇAS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #2b2b2b;
-            color: white;
-            text-align: center;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .item {
-            position: relative;
-            width: 200px;
-            cursor: pointer;
-            border: 2px solid #fff;
-            padding: 10px;
-            border-radius: 10px;
-        }
-        .item img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .message {
-            position: absolute;
-            top: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 14px;
-            display: none;
-            color: #f1f1f1;
-            max-width: 80%;
-            word-wrap: break-word;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAÇAS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .item {
+      position: relative;
+      width: 220px;
+      background-color: #2a2a2a;
+      border: 2px solid #444;
+      border-radius: 10px;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .item h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+    }
+    .description {
+      font-size: 14px;
+      color: #ccc;
+    }
+    .message {
+      display: none;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+  </style>
 </head>
 <body>
-    <h1>RAÇAS - O DUQUE FALA SOBRE ELAS</h1>
-    <div class="container">
+  <h1>RAÇAS DO DESTINO</h1>
+  <p>Escolha sua origem e ouça o desprezo do Duque...</p>
+  <div class="container">
 
-        <div class="item" onclick="showMessage('sangue_imortal')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/blood.png" alt="Sangue Imortal">
-            <h3>Sangue Imortal</h3>
-            <div class="message" id="sangue_imortal_msg">"Ah, os Sangue Imortal... Esses desgraçados pensam que podem transcender a morte. Eles são apenas parasitas da vida, sempre tentando reviver suas misérias e fracassos. Sanguessugas malditas!"</div>
-        </div>
-
-        <div class="item" onclick="showMessage('culto_draconico')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/dragon_communion.png" alt="Culto Dracônico">
-            <h3>Culto Dracônico</h3>
-            <div class="message" id="culto_draconico_msg">"Ah, o culto dos dragões... Um bando de tolos se entregando a feras que mal sabem controlar! Dragões não são deuses, são apenas criaturas primordiais com um poder destrutivo incontrolável. Esses seguidores são apenas peões em um jogo que não entendem!"</div>
-        </div>
-
-        <div class="item" onclick="showMessage('apostolos_de_pele_deus')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/godskin_apostles.png" alt="Apóstolos de Pele de Deus">
-            <h3>Apóstolos de Pele de Deus</h3>
-            <div class="message" id="apostolos_de_pele_deus_msg">"Esses apóstolos são uma piada! Eles acreditam que a pele dos deuses os torna superiores, mas na verdade, são apenas marionetes de uma fé doentia. Se a pele de um deus fosse tudo o que importasse, o mundo seria dominado por imitações grotescas!"</div>
-        </div>
-
-        <div class="item" onclick="showMessage('bestiais')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/bestial.png" alt="Bestiais">
-            <h3>Bestiais</h3>
-            <div class="message" id="bestiais_msg">"Esses bestiais são apenas animais de instinto! Em vez de pensar, eles atacam de forma irracional, guiados por um desejo primitivo e animalesco. Eles não têm nada de nobre, são apenas criaturas à mercê do caos!"</div>
-        </div>
-
-        <div class="item" onclick="showMessage('culto_dragao')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/dragon_cult.png" alt="Culto do Dragão">
-            <h3>Culto do Dragão</h3>
-            <div class="message" id="culto_dragao_msg">"O culto do dragão... Esses infelizes se ajoelham perante monstros antigos, acreditando que serão abençoados. Eles são apenas servos de seres que nunca terão compaixão. Ao invés de venerar dragões, deveriam buscar poder real!"</div>
-        </div>
-
-        <div class="item" onclick="showMessage('fogo_frenetico')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/frenzied_flame2.png" alt="Fogo Frenético">
-            <h3>Fogo Frenético</h3>
-            <div class="message" id="fogo_frenetico_msg">"Ah, o Fogo Frenético! Esses fanáticos acreditam que a destruição sem sentido os tornará mais fortes. Eles estão apenas mergulhando mais fundo no caos. Não há honra no fogo que consome tudo em seu caminho!"</div>
-        </div>
-
-        <div class="item" onclick="showMessage('arvore_erd')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/erdtree2.png" alt="Árvore Erd">
-            <h3>Árvore Erd</h3>
-            <div class="message" id="arvore_erd_msg">"A árvore Erd... Uma falsa deusa! Eles acreditam que ela lhes dá poder, mas na realidade, ela é uma prisão disfarçada. A verdadeira liberdade vem da autonomia, não da dependência de um grande tronco!"</div>
-        </div>
-
-        <div class="item" onclick="showMessage('chama_ruinosa')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/flame_of_ruin.png" alt="Chama Ruinosa">
-            <h3>Chama Ruinosa</h3>
-            <div class="message" id="chama_ruinosa_msg">"A Chama Ruinosa é a chama da destruição! Aqueles que a seguem estão destinados a um fim terrível. Acham que o caos trará poder, mas só trará o esquecimento. Melhor seria nunca tê-la acendido!"</div>
-        </div>
-
-        <div class="item" onclick="showMessage('ordem_dourada')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/golden_order.png" alt="Ordem Dourada">
-            <h3>Ordem Dourada</h3>
-            <div class="message" id="ordem_dourada_msg">"A Ordem Dourada... uma fachada de moralidade. Eles tentam impor sua visão do mundo, como se sua 'verdade' fosse a única válida. Eles estão apenas tentando controlar os outros. Eu prefiro a liberdade das minhas próprias escolhas!"</div>
-        </div>
-
-        <div class="item" onclick="showMessage('fogo_hipnotico')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/messmerfire2.png" alt="Fogo Hipnótico">
-            <h3>Fogo Hipnótico</h3>
-            <div class="message" id="fogo_hipnotico_msg">"Esse fogo hipnótico... Como se não bastasse a obsessão com o poder, agora as mentes frágeis se entregam a ele. Uma chama que escraviza, não liberta. Como podem chamar isso de força?"</div>
-        </div>
-
-        <div class="item" onclick="showMessage('arvore_haligtree')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/haligtree-symbol-clear.png" alt="Árvore Haligtree">
-            <h3>Árvore Haligtree</h3>
-            <div class="message" id="arvore_haligtree_msg">"A Árvore Haligtree... Uma ilusão de pureza e poder. Eles a veneram como se fosse uma fonte de vida eterna, mas é apenas uma prisão para os fracos que não sabem caminhar por si mesmos!"</div>
-        </div>
-
+    <div class="item" onclick="toggleMessage('msg1')">
+      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/blood.png" alt="Sangue Imortal">
+      <h3>Herdeiros do Sangue Antigo</h3>
+      <div class="description">Descendentes amaldiçoados por um pacto com entidades eternas. Seus corpos não morrem facilmente, mas sua alma já se perdeu há eras.</div>
+      <div class="message" id="msg1">"Ah, os Herdeiros... Nem vivos, nem mortos. Só o cheiro de mofo e desespero resta nesses corpos!"</div>
     </div>
 
-    <script>
-        function showMessage(itemId) {
-            // Esconde todas as mensagens
-            const messages = document.querySelectorAll('.message');
-            messages.forEach(function(msg) {
-                msg.style.display = 'none';
-            });
+    <div class="item" onclick="toggleMessage('msg2')">
+      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/dragon_communion.png" alt="Culto Dracônico">
+      <h3>Filhos da Comunhão Escamada</h3>
+      <div class="description">Humanos que consumiram o sangue dos dragões antigos em busca de poder bruto. Seu corpo lentamente assume formas reptilianas.</div>
+      <div class="message" id="msg2">"Servos de lagartos alados... Vocês têm escamas na pele e serragem no cérebro!"</div>
+    </div>
 
-            // Exibe a mensagem do item
-            const message = document.getElement
+    <div class="item" onclick="toggleMessage('msg3')">
+      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/godskin_apostles.png" alt="Godskin Apostles">
+      <h3>Ritos da Carne Divina</h3>
+      <div class="description">Um culto ancestral que veste a carne de semideuses em rituais profanos. Suas vestes sussurram em agonia.</div>
+      <div class="message" id="msg3">"Vocês usam pele como se fosse honra... só falta costurar cérebro aí dentro também!"</div>
+    </div>
+
+    <div class="item" onclick="toggleMessage('msg4')">
+      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/bestial.png" alt="Bestiais">
+      <h3>Descendência Bestial</h3>
+      <div class="description">Híbridos entre homem e fera, tomados pelo instinto e força bruta. Sobrevivem onde a lógica falha.</div>
+      <div class="message" id="msg4">"Animais com pernas e dentes... preferia enfrentá-los do que conversar com eles!"</div>
+    </div>
+
+    <div class="item" onclick="toggleMessage('msg5')">
+      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/dragon_cult.png" alt="Culto do Dragão">
+      <h3>Guardião dos Céus Partidos</h3>
+      <div class="description">Seguidores da antiga ordem dos trovões, usam relâmpagos como benção e maldição. Anseiam o retorno do dragão dourado.</div>
+      <div class="message" id="msg5">"Trovões e trovões... mas não conseguem acender nem uma vela sem pedir ajuda!"</div>
+    </div>
+
+    <div class="item" onclick="toggleMessage('msg6')">
+      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/frenzied_flame2.png" alt="Fogo Frenético">
+      <h3>Portadores da Chama Louca</h3>
+      <div class="description">Seres consumidos pelo olho ardente do caos. Riem enquanto queimam tudo, inclusive a si mesmos.</div>
+      <div class="message" id="msg6">"Ah, o brilho da insanidade... Até queimar a própria sombra parece um plano genial pra esses lunáticos!"</div>
+    </div>
+
+    <div class="item" onclick="toggleMessage('msg7')">
+      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/erdtree2.png" alt="Erdtree">
+      <h3>Filhos da Árvore-Mãe</h3>
+      <div class="description">Nascidos sob a sombra da árvore dourada, abençoados pela graça divina, mas presos às suas correntes de ouro.</div>
+      <div class="message" id="msg7">"Submissos à vontade de galhos e folhas... Que grande liberdade vocês têm!"</div>
+    </div>
+
+    <div class="item" onclick="toggleMessage('msg8')">
+      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/flame_of_ruin.png" alt="Chama Ruinosa">
+      <h3>Incendiários do Fim</h3>
+      <div class="description">Fanáticos que veneram a chama da destruição pura. Queimam o mundo para que nada floresça novamente.</div>
+      <div class="message" id="msg8">"Destruir tudo para recomeçar? Recomece lavando o rosto primeiro, pirómano!"</div>
+    </div>
+
+    <div class="item" onclick="toggleMessage('msg9')">
+      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/golden_order.png" alt="Ordem Dourada">
+      <h3>Discípulos da Ordem Imutável</h3>
+      <div class="description">Ordem sagrada que busca manter a ordem absoluta sobre o mundo. Tudo que desafia seu dogma é erradicado.</div>
+      <div class="message" id="msg9">"Imutável? Só suas ideias, que pararam no tempo junto com suas túnicas fedidas!"</div>
+    </div>
+
+    <div class="item" onclick="toggleMessage('msg10')">
+      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/messmerfire2.png" alt="Fogo de Messmer">
+      <h3>Legado da Pira Carmesim</h3>
+      <div class="description">Portadores de um fogo encantador e cruel, herdado de um império de tortura. O fogo deles fascina e devora.</div>
+      <div class="message" id="msg10">"Um fogo que hipnotiza... como se olhasse pra uma tocha e se apaixonasse. Patético!"</div>
+    </div>
+
+    <div class="item" onclick="toggleMessage('msg11')">
+      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/haligtree-symbol-clear.png" alt="Haligtree">
+      <h3>Jurados da Árvore Escarlate</h3>
+      <div class="description">Últimos defensores de uma ordem esquecida, escondidos sob a neve. Carregam consigo cicatrizes da realeza perdida.</div>
+      <div class="message" id="msg11">"Vivem num galho podre e acham que são reis. Um vento e viram lenha!"</div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleMessage(id) {
+      document.querySelectorAll('.message').forEach(el => el.style.display = 'none');
+      const msg = document.getElementById(id);
+      msg.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
