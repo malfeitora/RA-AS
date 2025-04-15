@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAÇAS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2b2b2b;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .item {
+            position: relative;
+            width: 200px;
+            cursor: pointer;
+            border: 2px solid #fff;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .message {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: none;
+            color: #f1f1f1;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <h1>RAÇAS - O DUQUE FALA SOBRE ELAS</h1>
+    <div class="container">
+
+        <div class="item" onclick="showMessage('bloodline')">
+            <img src="eldenring.wiki.fextralife.com/file/Elden-Ring/blood.png" alt="Bloodline">
+            <h3>Bloodline</h3>
+            <p>Preço: 5.000 almas</p>
+            <div class="message" id="bloodline_msg">"Ah, a famosa linhagem do sangue... Que raça mais repulsiva. Sedentos por poder, mas com um preço altíssimo. Prefiro não me sujar com essa... herança maldita."</div>
+        </div>
+
+        <div class="item" onclick="showMessage('dragon_communion')">
+            <img src="eldenring.wiki.fextralife.com/file/Elden-Ring/dragon_communion.png" alt="Dragon Communion">
+            <h3>Dragon Communion</h3>
+            <p>Preço: 7.500 almas</p>
+            <div class="message" id="dragon_communion_msg">"Dragões... Eles acham que são tão superiores, não é? Um monte de bestas que falham em entender o verdadeiro poder. Olha só, eles até se comunicam com os dragões... Patético!"</div>
+        </div>
+
+        <div class="item" onclick="showMessage('godskin_apostles')">
+            <img src="eldenring.wiki.fextralife.com/file/Elden-Ring/godskin_apostles.png" alt="Godskin Apostles">
+            <h3>Godskin Apostles</h3>
+            <p>Preço: 10.000 almas</p>
+            <div class="message" id="godskin_apostles_msg">"Apostólios dos deuses... ou melhor, seguidores fanáticos. Acreditam que os deuses são tudo, mas são apenas marionetes de uma fé doentia. Eu prefiro minha liberdade!"</div>
+        </div>
+
+        <div class="item" onclick="showMessage('bestial')">
+            <img src="eldenring.wiki.fextralife.com/file/Elden-Ring/bestial.png" alt="Bestial">
+            <h3>Bestial</h3>
+            <p>Preço: 6.000 almas</p>
+            <div class="message" id="bestial_msg">"Ah, os bestiais... sempre em busca de uma presa fácil, com seu instinto bruto e selvagem. Onde está a elegância na luta? Eles preferem usar força bruta a inteligência." </div>
+        </div>
+
+        <div class="item" onclick="showMessage('dragon_cult')">
+            <img src="eldenring.wiki.fextralife.com/file/Elden-Ring/dragon_cult.png" alt="Dragon Cult">
+            <h3>Dragon Cult</h3>
+            <p>Preço: 8.000 almas</p>
+            <div class="message" id="dragon_cult_msg">"Culto dos dragões? Ridículo! Eles acham que venerando esses monstros, encontrarão o poder... Em vez de servir aos dragões, deveriam procurar servir a si mesmos. Patéticos!"</div>
+        </div>
+
+        <div class="item" onclick="showMessage('frenzied_flame')">
+            <img src="eldenring.wiki.fextralife.com/file/Elden-Ring/frenzied_flame2.png" alt="Frenzied Flame">
+            <h3>Frenzied Flame</h3>
+            <p>Preço: 9.000 almas</p>
+            <div class="message" id="frenzied_flame_msg">"Essa chama frenética é uma verdadeira maldição! As pessoas que a seguem estão fadadas ao caos. Eu, pessoalmente, não consigo entender o apelo dessa destruição insana..."</div>
+        </div>
+
+        <div class="item" onclick="showMessage('erdtree')">
+            <img src="eldenring.wiki.fextralife.com/file/Elden-Ring/erdtree2.png" alt="Erdtree">
+            <h3>Erdtree</h3>
+            <p>Preço: 12.000 almas</p>
+            <div class="message" id="erdtree_msg">"A árvore Erd... Ouvir falar dessa árvore é como ouvir sobre uma religião imposta. Quem precisa disso? O poder deve ser conquistado, não dado de graça!"</div>
+        </div>
+
+        <div class="item" onclick="showMessage('flame_of_ruin')">
+            <img src="eldenring.wiki.fextralife.com/file/Elden-Ring/flame_of_ruin.png" alt="Flame of Ruin">
+            <h3>Flame of Ruin</h3>
+            <p>Preço: 11.000 almas</p>
+            <div class="message" id="flame_of_ruin_msg">"A chama da ruína... Um poder que consome tudo ao seu redor. Quem se entregaria a algo tão destrutivo? Que tipo de tolo gostaria de ver o mundo queimar?"</div>
+        </div>
+
+        <div class="item" onclick="showMessage('golden_order')">
+            <img src="eldenring.wiki.fextralife.com/file/Elden-Ring/golden_order.png" alt="Golden Order">
+            <h3>Golden Order</h3>
+            <p>Preço: 15.000 almas</p>
+            <div class="message" id="golden_order_msg">"Ah, o famoso 'Ordem Dourada'. Essa ordem é só uma fachada de controle! Eles enganam os fracos, fazendo-os acreditar em uma moral superior. Eu prefiro a liberdade!"</div>
+        </div>
+
+        <div class="item" onclick="showMessage('messmerfire')">
+            <img src="eldenring.wiki.fextralife.com/file/Elden-Ring/messmerfire2.png" alt="Messmerfire">
+            <h3>Messmerfire</h3>
+            <p>Preço: 13.000 almas</p>
+            <div class="message" id="messmerfire_msg">"Esse tal de Messmerfire... Um fogo estranho, que parece hipnotizar os fracos. Eu diria que é mais uma ferramenta de controle. Que nojo!"</div>
+        </div>
+
+        <div class="item" onclick="showMessage('haligtree')">
+            <img src="eldenring.wiki.fextralife.com/file/Elden-Ring/haligtree-symbol-clear.png" alt="Haligtree">
+            <h3>Haligtree</h3>
+            <p>Preço: 16.000 almas</p>
+            <div class="message" id="haligtree_msg">"O Haligtree... Uma árvore sagrada de um culto obscuro. O que há de sagrado nisso? Eu vejo apenas fanatismo. Melhor ficar longe disso." </div>
+        </div>
+
+        <!-- Adicione mais raças conforme necessário -->
+
+    </div>
+
+    <script>
+        function showMessage(itemId) {
+            // Esconde todas as mensagens
+            const messages = document.querySelectorAll('.message');
+            messages.forEach(function(msg) {
+                msg.style.display = 'none';
+            });
+
+            // Exibe a mensagem do item clicado
+            const message = document.getElementById(itemId + '_msg');
+            if (message) {
+                message.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+              </html>
