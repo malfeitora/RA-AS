@@ -1,144 +1,165 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+""
+
+<!DOCTYPE html><html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RAÇAS</title>
+  <title>Raças do RPG</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #1e1e1e;
-      color: white;
-      text-align: center;
-      padding: 20px;
+      background-color: #0d0d0d;
+      color: #f5f5dc;
+      font-family: 'Georgia', serif;
     }
     .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 20px;
+      padding: 40px;
     }
     .item {
+      background-color: #1a1a1a;
+      border: 2px solid #a52a2a;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
       position: relative;
-      width: 220px;
-      background-color: #2a2a2a;
-      border: 2px solid #444;
-      border-radius: 10px;
-      padding: 10px;
-      cursor: pointer;
     }
     .item img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .item h3 {
-      margin: 10px 0 5px;
-      font-size: 18px;
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
     }
     .description {
       font-size: 14px;
-      color: #ccc;
+      margin-bottom: 10px;
     }
     .message {
       display: none;
-      background-color: rgba(0, 0, 0, 0.85);
-      padding: 8px;
-      margin-top: 5px;
-      border-radius: 6px;
-      font-size: 13px;
+      background-color: #262626;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #999;
     }
   </style>
 </head>
 <body>
-  <h1>RAÇAS DO DESTINO</h1>
-  <p>Escolha sua origem e ouça o desprezo do Duque...</p>
-  <div class="container">
-
-    <div class="item" onclick="toggleMessage('msg1')">
-      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/blood.png" alt="Sangue Imortal">
-      <h3>Herdeiros do Sangue Antigo</h3>
-      <div class="description">Descendentes amaldiçoados por um pacto com entidades eternas. Seus corpos não morrem facilmente, mas sua alma já se perdeu há eras.</div>
-      <div class="message" id="msg1">"Ah, os Herdeiros... Nem vivos, nem mortos. Só o cheiro de mofo e desespero resta nesses corpos!"</div>
-    </div>
-
-    <div class="item" onclick="toggleMessage('msg2')">
-      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/dragon_communion.png" alt="Culto Dracônico">
-      <h3>Filhos da Comunhão Escamada</h3>
-      <div class="description">Humanos que consumiram o sangue dos dragões antigos em busca de poder bruto. Seu corpo lentamente assume formas reptilianas.</div>
-      <div class="message" id="msg2">"Servos de lagartos alados... Vocês têm escamas na pele e serragem no cérebro!"</div>
-    </div>
-
-    <div class="item" onclick="toggleMessage('msg3')">
-      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/godskin_apostles.png" alt="Godskin Apostles">
-      <h3>Ritos da Carne Divina</h3>
-      <div class="description">Um culto ancestral que veste a carne de semideuses em rituais profanos. Suas vestes sussurram em agonia.</div>
-      <div class="message" id="msg3">"Vocês usam pele como se fosse honra... só falta costurar cérebro aí dentro também!"</div>
-    </div>
-
-    <div class="item" onclick="toggleMessage('msg4')">
-      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/bestial.png" alt="Bestiais">
-      <h3>Descendência Bestial</h3>
-      <div class="description">Híbridos entre homem e fera, tomados pelo instinto e força bruta. Sobrevivem onde a lógica falha.</div>
-      <div class="message" id="msg4">"Animais com pernas e dentes... preferia enfrentá-los do que conversar com eles!"</div>
-    </div>
-
-    <div class="item" onclick="toggleMessage('msg5')">
-      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/dragon_cult.png" alt="Culto do Dragão">
-      <h3>Guardião dos Céus Partidos</h3>
-      <div class="description">Seguidores da antiga ordem dos trovões, usam relâmpagos como benção e maldição. Anseiam o retorno do dragão dourado.</div>
-      <div class="message" id="msg5">"Trovões e trovões... mas não conseguem acender nem uma vela sem pedir ajuda!"</div>
-    </div>
-
-    <div class="item" onclick="toggleMessage('msg6')">
-      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/frenzied_flame2.png" alt="Fogo Frenético">
-      <h3>Portadores da Chama Louca</h3>
-      <div class="description">Seres consumidos pelo olho ardente do caos. Riem enquanto queimam tudo, inclusive a si mesmos.</div>
-      <div class="message" id="msg6">"Ah, o brilho da insanidade... Até queimar a própria sombra parece um plano genial pra esses lunáticos!"</div>
-    </div>
-
-    <div class="item" onclick="toggleMessage('msg7')">
-      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/erdtree2.png" alt="Erdtree">
-      <h3>Filhos da Árvore-Mãe</h3>
-      <div class="description">Nascidos sob a sombra da árvore dourada, abençoados pela graça divina, mas presos às suas correntes de ouro.</div>
-      <div class="message" id="msg7">"Submissos à vontade de galhos e folhas... Que grande liberdade vocês têm!"</div>
-    </div>
-
-    <div class="item" onclick="toggleMessage('msg8')">
-      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/flame_of_ruin.png" alt="Chama Ruinosa">
-      <h3>Incendiários do Fim</h3>
-      <div class="description">Fanáticos que veneram a chama da destruição pura. Queimam o mundo para que nada floresça novamente.</div>
-      <div class="message" id="msg8">"Destruir tudo para recomeçar? Recomece lavando o rosto primeiro, pirómano!"</div>
-    </div>
-
-    <div class="item" onclick="toggleMessage('msg9')">
-      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/golden_order.png" alt="Ordem Dourada">
-      <h3>Discípulos da Ordem Imutável</h3>
-      <div class="description">Ordem sagrada que busca manter a ordem absoluta sobre o mundo. Tudo que desafia seu dogma é erradicado.</div>
-      <div class="message" id="msg9">"Imutável? Só suas ideias, que pararam no tempo junto com suas túnicas fedidas!"</div>
-    </div>
-
-    <div class="item" onclick="toggleMessage('msg10')">
-      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/messmerfire2.png" alt="Fogo de Messmer">
-      <h3>Legado da Pira Carmesim</h3>
-      <div class="description">Portadores de um fogo encantador e cruel, herdado de um império de tortura. O fogo deles fascina e devora.</div>
-      <div class="message" id="msg10">"Um fogo que hipnotiza... como se olhasse pra uma tocha e se apaixonasse. Patético!"</div>
-    </div>
-
-    <div class="item" onclick="toggleMessage('msg11')">
-      <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/haligtree-symbol-clear.png" alt="Haligtree">
-      <h3>Jurados da Árvore Escarlate</h3>
-      <div class="description">Últimos defensores de uma ordem esquecida, escondidos sob a neve. Carregam consigo cicatrizes da realeza perdida.</div>
-      <div class="message" id="msg11">"Vivem num galho podre e acham que são reis. Um vento e viram lenha!"</div>
-    </div>
-
+  <h1 style="text-align: center; color: #b22222;">Raças do RPG – Origens, Maldições e Bênçãos</h1>
+  <div class="container"><div class="item" onclick="toggleMessage('msg1')">
+  <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/haligtree-symbol-clear.png" alt="Haligtree">
+  <h3>Jurados da Árvore Escarlate</h3>
+  <div class="description">
+    Aparência: Trajam vestes vermelhas com marcas florais decadentes. Seus olhos brilham com seiva dourada corrompida.<br>
+    Bênçãos: +2 Foco, +1 Fé, resistência a sangramento.<br>
+    Maldições: Vulnerabilidade a fogo e gelo.
   </div>
+  <div class="message" id="msg1">"Vivem num galho podre e acham que são reis. Um vento e viram lenha!"</div>
+</div>
 
-  <script>
+<div class="item" onclick="toggleMessage('msg2')">
+  <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/golden_order_greatsword_weapon_elden_ring_wiki_guide_200px.png" alt="Leyndell">
+  <h3>Reis Caídos de Leyndell</h3>
+  <div class="description">
+    Aparência: Armaduras douradas desbotadas, com símbolos reais corroídos pelo tempo.<br>
+    Bênçãos: +2 Vigor, +1 Força, resistência à loucura.<br>
+    Maldições: Sofrem dano extra de magias abissais.
+  </div>
+  <div class="message" id="msg2">"A realeza não morre, apenas apodrece em ouro."</div>
+</div>
+
+<div class="item" onclick="toggleMessage('msg3')">
+  <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/flame_of_the_fell_god_incantation_elden_ring_wiki_guide_200px.png" alt="Chama Abissal">
+  <h3>Guardiões da Chama Abissal</h3>
+  <div class="description">
+    Aparência: Envoltos em túnicas flamejantes negras, com olhos que ardem em chamas.<br>
+    Bênçãos: +3 Fé, ignora parte da defesa mágica inimiga.<br>
+    Maldições: Vulneráveis à água e ao gelo.
+  </div>
+  <div class="message" id="msg3">"A chama consome... mas nos purifica também."</div>
+</div>
+
+<div class="item" onclick="toggleMessage('msg4')">
+  <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/volcano_mana_elden_ring_wiki_guide_200px.png" alt="Cinzas">
+  <h3>Filhos das Cinzas</h3>
+  <div class="description">
+    Aparência: Pele acinzentada, cobertos por brasas vivas. Carregam o cheiro da morte.<br>
+    Bênçãos: +2 Vitalidade, +1 Constituição, imunes a veneno.<br>
+    Maldições: Sofrem dano constante em áreas sagradas.
+  </div>
+  <div class="message" id="msg4">"Tudo o que nasce das cinzas carrega o peso da ruína."</div>
+</div>
+
+<div class="item" onclick="toggleMessage('msg5')">
+  <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/silver_mirrorshield_weapon_elden_ring_wiki_guide_200px.png" alt="Véu">
+  <h3>Vigias do Véu</h3>
+  <div class="description">
+    Aparência: Encobertos por mantos espelhados que ofuscam os olhos mortais.<br>
+    Bênçãos: +3 Destreza, evasão aprimorada.<br>
+    Maldições: Redução de dano físico causado.
+  </div>
+  <div class="message" id="msg5">"A sombra é nossa armadura, o silêncio nosso juramento."</div>
+</div>
+
+<div class="item" onclick="toggleMessage('msg6')">
+  <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/crimson_rot_incantation_elden_ring_wiki_guide_200px.png" alt="Peste Carmesim">
+  <h3>Portadores da Peste Carmesim</h3>
+  <div class="description">
+    Aparência: Cobertos por placas carmesins e erupções pestilentas.<br>
+    Bênçãos: Causam dano rot com ataques físicos, +1 Força.<br>
+    Maldições: Sofrem dano extra ao usar magias de cura.
+  </div>
+  <div class="message" id="msg6">"Somos o fim que rasteja, inevitável e glorioso."</div>
+</div>
+
+<div class="item" onclick="toggleMessage('msg7')">
+  <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/frenzied_burst_incantation_elden_ring_wiki_guide_200px.png" alt="Perdição">
+  <h3>Apóstolos da Perdição</h3>
+  <div class="description">
+    Aparência: Roupas rituais tingidas de preto com olhos extras costurados na pele.<br>
+    Bênçãos: +2 Inteligência, +2 Loucura em inimigos.<br>
+    Maldições: Sofrem loucura mais rápido.
+  </div>
+  <div class="message" id="msg7">"A sanidade é uma prisão — e nós somos livres."</div>
+</div>
+
+<div class="item" onclick="toggleMessage('msg8')">
+  <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/black_flame_ritual_incantation_elden_ring_wiki_guide_200px.png" alt="Vazio">
+  <h3>Ecos do Vazio</h3>
+  <div class="description">
+    Aparência: Sem forma física definida, apenas silhuetas e ecos.<br>
+    Bênçãos: +2 Arcano, +1 Fé, imunes a sangramento.<br>
+    Maldições: Vulnerabilidade extrema a ataques físicos.
+  </div>
+  <div class="message" id="msg8">"Não temos rosto, mas temos propósito."</div>
+</div>
+
+<div class="item" onclick="toggleMessage('msg9')">
+  <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/elden_lord_crown_elden_ring_wiki_guide_200px.png" alt="Dourados">
+  <h3>Herdeiros Dourados</h3>
+  <div class="description">
+    Aparência: Trajam mantos reais reluzentes, sempre limpos, mesmo na batalha.<br>
+    Bênçãos: +1 em todos os atributos, aura de proteção.<br>
+    Maldições: Aumenta a chance de ser alvo de inimigos.
+  </div>
+  <div class="message" id="msg9">"O sangue dos antigos pulsa forte... e exige um preço."</div>
+</div>
+
+<div class="item" onclick="toggleMessage('msg10')">
+  <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/freezing_mist_sorcery_elden_ring_wiki_guide_200px.png" alt="Peregrinos do Inverno">
+  <h3>Peregrinos do Inverno</h3>
+  <div class="description">
+    Aparência: Corpos frios como pedra, com neve eterna caindo sobre si.<br>
+    Bênçãos: +2 Inteligência, +1 Foco, resistência à lentidão.<br>
+    Maldições: Vulneráveis a fogo e ataques sagrados.
+  </div>
+  <div class="message" id="msg10">"Nascemos no gelo eterno... e lá retornaremos."</div>
+</div>
+
+  </div>  <script>
     function toggleMessage(id) {
       document.querySelectorAll('.message').forEach(el => el.style.display = 'none');
       const msg = document.getElementById(id);
       msg.style.display = 'block';
     }
-  </script>
-</body>
+  </script></body>
 </html>
+""
