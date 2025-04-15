@@ -1,168 +1,105 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>As Grandes Raças</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            padding: 20px;
-        }
-
-        .item {
-            background-color: #fff;
-            border: 2px solid #000;
-            border-radius: 10px;
-            margin: 15px;
-            padding: 20px;
-            width: 300px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .item:hover {
-            transform: scale(1.05);
-        }
-
-        .item img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-
-        .item h3 {
-            font-size: 1.5em;
-            color: #b30000;
-        }
-
-        .description {
-            font-size: 1em;
-            color: #666;
-        }
-
-        .message {
-            display: none;
-            font-size: 1em;
-            margin-top: 10px;
-            color: #333;
-            background-color: #f0f0f0;
-            padding: 10px;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <div class="item" onclick="toggleMessage('msg1')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/haligtree-symbol-clear.png" alt="Haligtree">
-            <h3>Jurados da Árvore Escarlate</h3>
-            <div class="description">Últimos defensores de uma ordem esquecida, escondidos sob a neve. Carregam consigo cicatrizes da realeza perdida.</div>
-            <div class="message" id="msg1">
-                <p>Buffs: Resistência aumentada contra elementos do frio e veneno.</p>
-                <p>Maldições: Vulnerabilidade aumentada contra magia e fogo.</p>
-            </div>
-        </div>
-
-        <div class="item" onclick="toggleMessage('msg2')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/haligtree-symbol-clear.png" alt="Haligtree">
-            <h3>Os Filhos do Eclipse</h3>
-            <div class="description">Seres marcados pela lua e pelo sol, possuem pele dourada e olhos que brilham como estrelas. Seus corpos são feitos de puro aço.</div>
-            <div class="message" id="msg2">
-                <p>Buffs: Dano aumentado com espadas e lanças, resistência a magias solares.</p>
-                <p>Maldições: Perda de resistência contra ataques sombrios.</p>
-            </div>
-        </div>
-
-        <div class="item" onclick="toggleMessage('msg3')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/haligtree-symbol-clear.png" alt="Haligtree">
-            <h3>Renegados do Templo</h3>
-            <div class="description">Antigos sacerdotes caídos em desgraça, com pele que exala um cheiro fétido e pálido, geralmente com olhos vazios.</div>
-            <div class="message" id="msg3">
-                <p>Buffs: Poderes de cura aumentados, resistência ao dano físico superior.</p>
-                <p>Maldições: Vulnerabilidade a ataques mágicos e de fogo.</p>
-            </div>
-        </div>
-
-        <div class="item" onclick="toggleMessage('msg4')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/haligtree-symbol-clear.png" alt="Haligtree">
-            <h3>Os Despertos do Caos</h3>
-            <div class="description">Seres forjados nas chamas do abismo, com cicatrizes ardentes que se espalham por todo o corpo.</div>
-            <div class="message" id="msg4">
-                <p>Buffs: Aumenta os danos causados por magias de fogo e ataque físico com armas pesadas.</p>
-                <p>Maldições: Vulnerabilidade a venenos e ataques mágicos de gelo.</p>
-            </div>
-        </div>
-
-        <div class="item" onclick="toggleMessage('msg5')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/haligtree-symbol-clear.png" alt="Haligtree">
-            <h3>Guardião do Véu</h3>
-            <div class="description">Seres silenciosos que se movem pelas sombras, com pele que reflete pouca luz. São quase invisíveis à vista comum.</div>
-            <div class="message" id="msg5">
-                <p>Buffs: Aumento de furtividade e resistências a ataques físicos leves.</p>
-                <p>Maldições: Redução de força em combate corpo a corpo e perda de resistência contra luz.</p>
-            </div>
-        </div>
-
-        <div class="item" onclick="toggleMessage('msg6')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/haligtree-symbol-clear.png" alt="Haligtree">
-            <h3>Os Filhos da Tempestade</h3>
-            <div class="description">Seres com pele escura como nuvens de tempestade, que podem controlar os ventos e a eletricidade.</div>
-            <div class="message" id="msg6">
-                <p>Buffs: Aumento de dano elétrico e resistência a ataques mágicos de vento.</p>
-                <p>Maldições: Fragilidade a ataques físicos e venenos.</p>
-            </div>
-        </div>
-
-        <div class="item" onclick="toggleMessage('msg7')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/haligtree-symbol-clear.png" alt="Haligtree">
-            <h3>Heróis do Crepúsculo</h3>
-            <div class="description">Desgarrados da luz, mas com uma força bruta que desafia os mais poderosos deuses. Seus corpos refletem o tom de um pôr-do-sol eterno.</div>
-            <div class="message" id="msg7">
-                <p>Buffs: Aumento de força e resistência contra ataques mágicos.</p>
-                <p>Maldições: Dano aumentado por magias sombrias, reduz a velocidade de movimento.</p>
-            </div>
-        </div>
-
-        <div class="item" onclick="toggleMessage('msg8')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/haligtree-symbol-clear.png" alt="Haligtree">
-            <h3>Os Lamentos da Lua</h3>
-            <div class="description">Raça destinada ao esquecimento, com pele prateada que brilha à noite. Eles carregam consigo o peso de uma maldição da lua.</div>
-            <div class="message" id="msg8">
-                <p>Buffs: Resistência a magia lunar e poder aumentado em feitiçarias da lua.</p>
-                <p>Maldições: Diminuição de resistência física e aumento da vulnerabilidade ao fogo.</p>
-            </div>
-        </div>
-
-        <div class="item" onclick="toggleMessage('msg9')">
-            <img src="https://eldenring.wiki.fextralife.com/file/Elden-Ring/haligtree-symbol-clear.png" alt="Haligtree">
-            <h3>Os Fragmentos do Sol</h3>
-            <div class="description">Seres feitos de pura luz, seu corpo é inconstante e brilha intensamente. Sua presença pode causar cegueira em qualquer um que olhe diretamente.</div>
-            <div class="message" id="msg9">
-                <p>Buffs: Aumento de poder de ataque mágico e regeneração de mana rápida.</p>
-                <p>Maldições: Vulnerabilidade a ataques sombrios e perda de resistência física a longo prazo.</p>
-            </div>
-        </div>
-
-    </div>
-
-    <script>
-        function toggleMessage(id) {
-            document.querySelectorAll('.message').forEach(el => el.style.display = 'none');
-            const msg = document.getElementById(id);
-            msg.style.display = 'block';
-        }
-    </script>
-</body>
-
-</html>
+</div><div class="item" onclick="toggleMessage('msg1')">
+  <img src="bestial.webp" alt="Bestial">
+  <h3>Bestiais</h3>
+  <div class="description">Seres tomados por instintos primitivos e corpos deformados por maldições antigas.</div>
+  <div class="message" id="msg1">Aparência: Pele espessa, olhos brilhantes e garras afiadas. 
+Buffs: +10% de dano físico, resistência aumentada contra veneno. 
+Debuffs: Vulnerabilidade a magias sagradas e perda de sanidade em áreas sagradas.</div>
+</div><div class="item" onclick="toggleMessage('msg2')">
+  <img src="blood.webp" alt="Blood">
+  <h3>Sanguíneos</h3>
+  <div class="description">Veneradores do sangue como fonte de poder. Envoltos em véus vermelhos, seguem rituais proibidos.</div>
+  <div class="message" id="msg2">Aparência: Roupas encharcadas em sangue seco, olhos carmesins.
+Buffs: Regeneração com ataques, +15% dano contra inimigos com sangramento.
+Debuffs: Redução da defesa geral e fraqueza a fogo.</div>
+</div><div class="item" onclick="toggleMessage('msg3')">
+  <img src="dragon_communion.webp" alt="Dragon Communion">
+  <h3>Comunhão Dracônica</h3>
+  <div class="description">Aqueles que devoram corações de dragões e herdam seus dons selvagens e sua loucura.</div>
+  <div class="message" id="msg3">Aparência: Escamas cobrindo o corpo, olhos reptilianos.
+Buffs: Habilidades de sopro de dragão, +10% resistência elemental.
+Debuffs: Sofrem dano extra de ataques mágicos e vulnerabilidade a relâmpagos.</div>
+</div><div class="item" onclick="toggleMessage('msg4')">
+  <img src="dragon_cult.webp" alt="Dragon Cult">
+  <h3>Discípulos do Culto do Dragão</h3>
+  <div class="description">Cavaleiros e fanáticos da fé relampejante. Canalizam poder puro do trovão.</div>
+  <div class="message" id="msg4">Aparência: Armaduras douradas e tatuagens reluzentes.
+Buffs: +20% dano elétrico, resistência a paralisia.
+Debuffs: Vulneráveis à magia negra e fraqueza contra gelo.</div>
+</div><div class="item" onclick="toggleMessage('msg5')">
+  <img src="erdtree2.webp" alt="Erdtree">
+  <h3>Filhos da Árvore Áurea</h3>
+  <div class="description">Escolhidos pela luz do Erdtree. Carregam bênçãos antigas e uma fé inabalável.</div>
+  <div class="message" id="msg5">Aparência: Pele brilhante e símbolos dourados pelo corpo.
+Buffs: Cura aumentada em 25%, maior resistência a maldições.
+Debuffs: Redução na resistência física e lentidão em áreas corrompidas.</div>
+</div><div class="item" onclick="toggleMessage('msg6')">
+  <img src="flame_of_ruin.webp" alt="Flame of Ruin">
+  <h3>Portadores da Chama da Ruína</h3>
+  <div class="description">Caminham como arautos do fim. Consumidos por chamas eternas, irradiam destruição.</div>
+  <div class="message" id="msg6">Aparência: Corpo queimado e olhos incandescentes.
+Buffs: +25% dano de fogo, imunidade a queimaduras.
+Debuffs: Perda constante de vida fora de combate e fraqueza a gelo.</div>
+</div><div class="item" onclick="toggleMessage('msg7')">
+  <img src="frenzied_flame2.webp" alt="Frenzied Flame">
+  <h3>Abraçados pela Chama Frenética</h3>
+  <div class="description">Loucos por natureza, seus olhos ardem com o frenesi da verdade absoluta.</div>
+  <div class="message" id="msg7">Aparência: Olhos dourados flamejantes, pele com rachaduras de calor.
+Buffs: +30% em dano frenético, imunidade à loucura.
+Debuffs: Redução severa da defesa e ataques aleatórios em frenesi.</div>
+</div><div class="item" onclick="toggleMessage('msg8')">
+  <img src="godskin_apostles.webp" alt="Godskin Apostles">
+  <h3>Apóstolos da Pele Divina</h3>
+  <div class="description">Esfolam os deuses e vestem suas peles. Mestres do obscuro e da blasfêmia.</div>
+  <div class="message" id="msg8">Aparência: Corpos deformados cobertos por pele negra.
+Buffs: +20% dano sombrio, absorvem vida com feitiços.
+Debuffs: Fraqueza extrema a luz e ataques sagrados.</div>
+</div><div class="item" onclick="toggleMessage('msg9')">
+  <img src="golden_order.webp" alt="Golden Order">
+  <h3>Guardas da Ordem Dourada</h3>
+  <div class="description">Defensores da verdadeira fé e da lógica divina. Julgam com lâminas santificadas.</div>
+  <div class="message" id="msg9">Aparência: Vestes brancas com detalhes dourados.
+Buffs: +15% resistência mágica, aumento de fé e inteligência.
+Debuffs: Fraqueza a ataques físicos diretos e venenos.</div>
+</div><div class="item" onclick="toggleMessage('msg10')">
+  <img src="haligtree-symbol-clear.webp" alt="Haligtree">
+  <h3>Jurados da Árvore Escarlate</h3>
+  <div class="description">Últimos defensores de uma ordem esquecida, escondidos sob a neve. Carregam consigo cicatrizes da realeza perdida.</div>
+  <div class="message" id="msg10">Aparência: Trajes rasgados mas nobres, cobertos por neve e sangue seco.
+Buffs: +10% resistência mágica, imunidade ao frio.
+Debuffs: Redução na força física e fraqueza contra fogo.</div>
+</div><div class="item" onclick="toggleMessage('msg11')">
+  <img src="messmerfire2.webp" alt="Messmer">
+  <h3>Filhos de Messmer</h3>
+  <div class="description">Nascidos das cinzas da guerra, alimentam-se de chamas carmesins e promessas de vingança.</div>
+  <div class="message" id="msg11">Aparência: Chamas vermelhas percorrem seus corpos como tatuagens vivas.
+Buffs: +20% em feitiços de fogo, aumento de moral ao matar.
+Debuffs: Fraqueza a gelo e chance de autocombustão em áreas secas.</div>
+</div><div class="item" onclick="toggleMessage('msg12')">
+  <img src="servants_of_rot2.webp" alt="Rot">
+  <h3>Servos da Podridão</h3>
+  <div class="description">Escolhidos pela Flor Escarlate, espalham a podridão como bênção divina.</div>
+  <div class="message" id="msg12">Aparência: Corpos cobertos de bolores e pétalas carmesins.
+Buffs: +25% em ataques de podridão, resistência a venenos.
+Debuffs: Redução de defesa e -10% de velocidade de movimento.</div>
+</div><div class="item" onclick="toggleMessage('msg13')">
+  <img src="spiral_incant_symbol_1_clear.webp" alt="Spiral Incant">
+  <h3>Profetas da Espiral</h3>
+  <div class="description">Veem além da realidade comum, canalizam feitiços nunca ditos.</div>
+  <div class="message" id="msg13">Aparência: Olhos espiralados, roupas com runas flutuantes.
+Buffs: +30% dano com feitiços raros, maior foco.
+Debuffs: Vulneráveis a interrupções e maldições mentais.</div>
+</div><div class="item" onclick="toggleMessage('msg14')">
+  <img src="two_finger.webp" alt="Two Fingers">
+  <h3>Discípulos dos Dois Dedos</h3>
+  <div class="description">Guiados pelas vozes silenciosas da Vontade Maior. Vivem para servir ao ciclo eterno.</div>
+  <div class="message" id="msg14">Aparência: Marcas douradas nas mãos e véus sagrados.
+Buffs: Cura automática lenta, +15% fé.
+Debuffs: Vulnerabilidade a ataques sombrios e desespero ao ver a morte de aliados.</div>
+</div><script>
+  function toggleMessage(id) {
+    document.querySelectorAll('.message').forEach(el => el.style.display = 'none');
+    const msg = document.getElementById(id);
+    msg.style.display = 'block';
+  }
+</script></body>
